@@ -148,3 +148,23 @@ if (barangayGallery && barangayOpen && barangayClose) {
     if (event.target === barangayGallery) barangayGallery.close();
   });
 }
+
+
+
+/* ======================================
+   ENSURE LINKEDIN LINK IS CLICKABLE
+====================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    const linkedinLink =
+        document.getElementById("linkedin-link");
+
+    if (linkedinLink) {
+        linkedinLink.href =
+            "https://www.linkedin.com/in/irene-racho/";
+
+        linkedinLink.target = "_blank";
+        linkedinLink.rel = "noopener noreferrer";
+        linkedinLink.hidden = false;
+    }
+});
