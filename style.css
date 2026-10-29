@@ -646,3 +646,59 @@ img { display: block; max-width: 100%; }
     }
 
 }
+
+
+
+/* ======================================
+   FIX CONTACT SOCIAL LINKS
+====================================== */
+
+#contact a {
+    position: relative;
+    z-index: 50;
+    pointer-events: auto !important;
+    cursor: pointer;
+}
+
+#contact::before,
+#contact::after {
+    pointer-events: none;
+}
+
+
+
+
+/* ====================================
+   FIX GITHUB & LINKEDIN CLICK AREA
+==================================== */
+
+#contact #github-link,
+#contact #linkedin-link {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 44px;
+    padding: 8px 4px;
+
+    position: relative;
+    z-index: 999;
+    pointer-events: auto !important;
+
+    cursor: pointer;
+    color: #f8f8f2 !important;
+}
+
+/* Keep both link hover colors consistent */
+#contact #github-link:hover,
+#contact #linkedin-link:hover {
+    color: #f8f8f2 !important;
+}
+
+/* Decorative underline must not block clicks */
+#contact #github-link::after,
+#contact #linkedin-link::after,
+#contact #github-link::before,
+#contact #linkedin-link::before {
+    pointer-events: none !important;
+}
