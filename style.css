@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #d7d7d7;
+  overflow-x: hidden;
+}
+
+/* Main Split Screen Container */
+.hero-container {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background-color: #d7d7d7; /* Light Gray background */
+}
+
+/* --- LEFT SIDE --- */
+.left-side {
+  flex: 1.1;
+  padding: 3rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #000;
+}
+
+.hero-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  padding-left: 2rem;
+}
+
+.greeting {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 0.8rem;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: #717171;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  background-color: #c4c4c4;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* --- RIGHT SIDE (Dark Side) --- */
+.right-side {
+  flex: 0.9;
+  background-color: #000000;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Kani ang mo-himo sa diagonal slant nga cut */
+  clip-path: polygon(18% 0%, 100% 0%, 100% 100%, 0% 100%);
+  margin-left: -5%;
+}
+
+/* Navigation bar sa ibabaw sa right side */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 3rem 4rem;
+  z-index: 10;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
+}
+
+.navbar a:hover {
+  color: #aaa;
+}
+
+.navbar .btn-contact {
+  background-color: #fff;
+  color: #000;
+  padding: 0.6rem 1.4rem;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.navbar .btn-contact:hover {
+  background-color: #ddd;
+  color: #000;
+}
+
+/* Image wrapper */
+.image-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 75%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+.profile-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.4));
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 900px) {
+  .hero-container {
+    flex-direction: column;
+  }
+
+  .right-side {
+    clip-path: none;
+    margin-left: 0;
+    min-height: 50vh;
+  }
+
+  .navbar {
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+}
+
+
+/* I-update ang .image-wrapper aron motungatunga sa slanted line */
+.image-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 62%;
+  transform: translateX(-50%);
+  width: auto;
+  max-height: 90vh;
+  z-index: 5;
+  pointer-events: none; /* Para ma-click gihapon ang mga links sa luyo */
+}
+
+.profile-img {
+  height: 85vh;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.4));
+}
+
+
+
+.image-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 64%; /* adjust gamay pakadto sa right/tunga */
+  transform: translateX(-50%);
+  width: auto;
+  max-height: 95vh;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.profile-img {
+  height: 90vh; /* gihimong 90vh para mas dako ug prominent */
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0, 0, 0, 0.45));
+}
